@@ -28,5 +28,6 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file ./Blogging-Platform-API/pom.xml
-
+    - name: Execute Jar File
+      run: sudo kill -9 `sudo lsof-t -i:8080` & sudo java -jar /home/ubuntu/_work//Blogging-App-Deployment/Blogging-App-Deployment/Blogging-Platform-API/target/Blogging-Platform-API-0.0.1-SNAPSHOT.jar &
    
